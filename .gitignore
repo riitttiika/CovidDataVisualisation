@@ -13,7 +13,11 @@ df.head()
 
 #processing data
 df.rename(columns={'Country_Region': "Country"}, inplace=True)
-df.head()### Find top 20 countries with maximum number of confirmed cases
+df.head()
+world = df.groupby("Country")['Confirmed','Active','Recovered','Deaths'].sum().reset_index()
+world.head()
+
+### Find top 20 countries with maximum number of confirmed cases
 top_20 = world.sort_values(by=['Confirmed'], ascending=False).head(20)
 ### Generate a Barplot
 plt.figure(figsize=(12,10))
