@@ -49,7 +49,5 @@ figure.show()
 
 
 
-#processing data
-world = df.groupby("Country")['Confirmed','Active','Recovered','Deaths'].sum().reset_index()
-world.head()
+
 
